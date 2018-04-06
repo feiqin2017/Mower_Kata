@@ -3,7 +3,7 @@ package com.xebia.mower.bean;
 public class CoordinateBuilder {
     Integer x;
     Integer y;
-    String direction;
+    Direction direction;
 
     public static CoordinateBuilder aCoordinate(){
         return new CoordinateBuilder();
@@ -19,7 +19,7 @@ public class CoordinateBuilder {
         return this;
     }
 
-    public CoordinateBuilder withDirection(String direction){
+    public CoordinateBuilder withDirection(Direction direction){
         this.direction = direction;
         return this;
     }

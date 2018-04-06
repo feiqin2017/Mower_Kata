@@ -1,26 +1,33 @@
 package com.xebia.mower.bean;
 
 import com.xebia.mower.exception.InvalidCommandException;
+import com.xebia.mower.exception.InvalidStartPositionException;
 
 public class Mower {
     private Coordinate coordinate;
 
-    public Mower(Coordinate coordinate) {
+    private Lawn lawn;
+
+    public Mower(final Coordinate coordinate, final Lawn lawn) throws InvalidStartPositionException {
+        if(coordinate.outSideOf(lawn)){
+            throw new InvalidStartPositionException();
+        }
         this.coordinate = coordinate;
+        this.lawn = lawn;
     }
 
-    public void receiveCommands(String commands) throws InvalidCommandException{
+    public void receiveCommands(final String commands) throws InvalidCommandException{
         char[] command = commands.toCharArray();
         for(char c : command) {
-            processCommand(c);
+            moveForCommand(c);
         }
     }
 
-    private void processCommand(char command) throws InvalidCommandException {
+    private void moveForCommand(final char command) throws InvalidCommandException {
         switch (command) {
-            case 'G': coordinate.turnLeft();    break;
-            case 'D': coordinate.turnRight();   break;
-            case 'A': coordinate.forward();     break;
+            case 'G': coordinate.nextLeftDirection();    break;
+            case 'D': coordinate.nextRightDirection();   break;
+            case 'A': coordinate.nextPosition(lawn);         break;
             default: throw new InvalidCommandException();
         }
     }
