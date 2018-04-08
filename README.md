@@ -1,5 +1,5 @@
 # Mower_Kata
-![Coverage Status](https://coveralls.io/repos/github/feiqin2017/Mower_Kata/badge.svg?branch=master)  [![Build Status](https://travis-ci.org/feiqin2017/Mower_Kata.svg?branch=master)]
+![Coverage Status](https://coveralls.io/repos/github/feiqin2017/Mower_Kata/badge.svg?branch=master)  ![Build Status](https://travis-ci.org/feiqin2017/Mower_Kata.svg?branch=master)
 
 ### Test
     mvn test
