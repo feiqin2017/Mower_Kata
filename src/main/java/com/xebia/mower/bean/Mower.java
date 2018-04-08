@@ -9,12 +9,12 @@ public class Mower {
     private Lawn lawn;
 
     public Mower(final Coordinate coordinate, final Lawn lawn) throws InvalidStartPositionException {
-        requireValidateStartPosition(coordinate);
+        requireValidateStartPosition(coordinate, lawn);
         this.coordinate = coordinate;
         this.lawn = lawn;
     }
 
-    private void requireValidateStartPosition(Coordinate coordinate) throws InvalidStartPositionException {
+    private void requireValidateStartPosition(Coordinate coordinate, Lawn lawn) throws InvalidStartPositionException {
         if(coordinate.outSideOf(lawn)){
             throw new InvalidStartPositionException();
         }
