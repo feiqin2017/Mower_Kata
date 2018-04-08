@@ -9,11 +9,15 @@ public class Mower {
     private Lawn lawn;
 
     public Mower(final Coordinate coordinate, final Lawn lawn) throws InvalidStartPositionException {
+        requireValidateStartPosition(coordinate);
+        this.coordinate = coordinate;
+        this.lawn = lawn;
+    }
+
+    private void requireValidateStartPosition(Coordinate coordinate) throws InvalidStartPositionException {
         if(coordinate.outSideOf(lawn)){
             throw new InvalidStartPositionException();
         }
-        this.coordinate = coordinate;
-        this.lawn = lawn;
     }
 
     public void receiveCommands(final String commands) throws InvalidCommandException{

@@ -30,6 +30,7 @@ public class InputFileTest {
         String position = mower.positionAt();
         assertThat(position, is(coordinate.toString()));
     }
+    
 
     public static class CustomMapper extends IdentityMapper {
         @Override
