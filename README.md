@@ -32,7 +32,7 @@ Chaque tondeuse se déplace de façon séquentielle, ce qui signifie que la seco
 Lorsqu'une tondeuse achève une série d'instruction, elle communique sa position et son orientation.
 OBJECTIF
 
-Concevoir et écrire un programme s'exécutant sur une JVM ≥ 1.6, implémentant la spécification ci-dessus et passant le test ci-après.
+Concevoir et écrire un programme s'exécutant sur une JVM, implémentant la spécification ci-dessus et passant le test ci-après.
 TEST
 
 Le fichier suivant est fourni en entrée :
